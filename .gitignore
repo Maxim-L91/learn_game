@@ -12,3 +12,36 @@
 
 pkg/
 src/
+
+# --- Системные файлы ---
+*~
+*.swp
+*.swo
+.DS_Store
+
+# --- Бинарные сборки Паскаля ---
+*.o
+*.ppu
+*.a
+*.so
+*.dll
+*.dylib
+*.out
+*.exe
+
+# --- Free Pascal / Lazarus ---
+lib/
+backup/
+*.bak
+*.lps
+*.lpi
+*.compiled
+
+# --- IDE / редакторы ---
+.vscode/
+.idea/
+*.iml
+
+# --- Логи и временные ---
+*.log
+*.log.*
