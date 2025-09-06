@@ -1,20 +1,34 @@
 program learn_game;
-var
-	{Меню}
-	choice: byte;
 
-	{Имя персонажа}
-	character_name: string;
+	{Характеристики персонажа}
+	type
+		MyPerson = record
+			strength: word;
+			health: word;
+			armor: word;
+			regeneration: word;
+			energy: word;
+			amount_stats: integer;
+		end;
+	
+	var
+		{Характеристики персонажа}
+		person: MyPerson;
+		
+		{Меню}
+		choice: byte;
 
-	{Статы персонажа}
-	strength: word = 10;
-	health: word = 10;
-	armor: word = 10;
-	regeneration: word = 10;
-	energy: word = 10;
-	amount_stats: integer;
+		{Имя персонажа}
+		character_name: string;
 
 begin
+	{Инициализация характеристик персонажа}
+	person.strength := 10;
+	person.health := 10;
+	person.armor := 10;
+	person.regeneration := 10;
+	person.energy := 10;
+
 	writeln('Введите имя персонажа:');
 	readln(character_name);
 
@@ -32,13 +46,13 @@ begin
 			writeln(' ');
 			writeln('Имя: ', character_name);
 			writeln(' ');
-			writeln('Сила: ', strength);
-			writeln('Здоровье: ', health);
-			writeln('Броня: ', armor);
-			writeln('Регенерация: ', regeneration);
-			writeln('Энергия: ', energy);
-			amount_stats := strength + health + armor + regeneration + energy;
-			writeln('Сумма: ', amount_stats);
+			writeln('Сила: ', person.strength);
+			writeln('Здоровье: ', person.health);
+			writeln('Броня: ', person.armor);
+			writeln('Регенерация: ', person.regeneration);
+			writeln('Энергия: ', person.energy);
+			person.amount_stats := person.strength + person.health + person.armor + person.regeneration + person.energy;
+			writeln('Сумма: ', person.amount_stats);
 		end 
 		else if choice = 0 then
 		begin
